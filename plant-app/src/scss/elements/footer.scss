@@ -1,0 +1,31 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    
+    div{
+
+        img{
+            width: 30px;
+            height: 30px;
+        }
+        p{
+            font-family: $font-logo;
+            font-size: $font-size-logo;
+        }
+
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+            color: $color-header;
+            margin: 0 10px;
+
+        }
+    }
+
+}

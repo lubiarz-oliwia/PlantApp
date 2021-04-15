@@ -1,0 +1,48 @@
+header {
+    display: flex;
+    font-size: 12px;
+    padding: 20px 10px;
+
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 30px;
+
+        h1 {
+            font-size: $font-size-header;
+            color: $color-dark;
+            margin-bottom: 20px;
+
+            span {
+                &:first-child {
+                    color: $color-buy;
+                }
+
+                &:last-child {
+                    color: $color-sell;
+                }
+            }
+        }
+
+        h2 {
+            font-size: $font-size-text;
+            color: $color-text;
+            margin-bottom: 20px;
+        }
+
+        div {
+            flex-direction: row;
+
+        }
+
+
+    }
+
+    img {
+        border: 2px solid $color-border;
+        width: 50%;
+    }
+
+}

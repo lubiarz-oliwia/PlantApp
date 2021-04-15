@@ -1,0 +1,15 @@
+.loginForm {
+    font-style: $open-sans-font;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+
+    .forButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 30px;
+
+    }
+}
