@@ -1,13 +1,13 @@
-header {
+.header {
     display: flex;
-    font-size: 12px;
-    padding: 20px 10px;
+    // font-size: 12px;
+    // padding: 20px 10px;
+    align-items: center;
+    justify-content: center;
 
 
     div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+     
         padding-right: 30px;
 
         h1 {
@@ -32,17 +32,20 @@ header {
             margin-bottom: 20px;
         }
 
-        div {
-            flex-direction: row;
-
+        div{
+       
+            padding-bottom: 20px;
         }
+
+       
 
 
     }
 
     img {
         border: 2px solid $color-border;
-        width: 50%;
+
+        height: 500px;
     }
 
 }

@@ -2,17 +2,17 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-import {CarouselSec} from "./Carousel";
+import {UserCard} from "./UserCard";
 
 export default {
-    title: 'Example/CarouselSec',
-    component: CarouselSec,
+    title: 'Example/UserCard',
+    component: UserCard,
   };
 
-  const Template = (args) => <CarouselSec {...args} />;
+  const Template = (args) => <UserCard {...args} />;
 
   export const Primary = Template.bind({});
   Primary.args = {
-    
+  
   };
   
