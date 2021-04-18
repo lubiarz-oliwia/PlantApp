@@ -1,38 +1,49 @@
-
-
-
-
 .tileSection {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 20px 10px;
+    margin: 40px auto;
+
+
     h1 {
+        justify-content: center;
+        text-align: center;
         font-size: $font-size-header;
-        color: $color-dark;
-        margin-bottom: 20px;
+        color: $color-border;
+        margin-bottom: 40px;
+        
     }
 
-    div{
+    div {
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
-        
+        justify-content: space-between;
+
         .tile {
             flex-direction: column;
             text-align: center;
-            padding: 15px 50px;
+            padding: 15px 100px;
+            margin-bottom: 20px;
 
-        
-            h1{
+
+            .iconTile {
+                margin-bottom: 20px;
+                font-size: 25px;
+            }
+
+            h1 {
                 color: $color-buy;
                 font-size: $font-size-logo;
             }
+
             p {
                 color: $color-text;
                 font-size: $font-size-text;
+                margin-bottom: 20px;
             }
         }
     }
-    
+
 }

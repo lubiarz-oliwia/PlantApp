@@ -4,7 +4,7 @@ import { ButtonComponent } from '../Button/Button';
 import { Tile } from "../Tile/Tile"
 
 
-export const TileSection = ({ data, header, buttonText }) => {
+export const TileSection = ({ data, header, buttonText, buttonClassName }) => {
 
     return (
         <div className="tileSection">
@@ -23,7 +23,7 @@ export const TileSection = ({ data, header, buttonText }) => {
                     })
                 }
             </div>
-            <ButtonComponent children={buttonText}></ButtonComponent>
+            <ButtonComponent children={buttonText} className={buttonClassName}></ButtonComponent>
         </div>
 
     )

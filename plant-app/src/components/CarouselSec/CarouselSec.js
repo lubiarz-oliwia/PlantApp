@@ -4,6 +4,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import background4 from "../../images/background4.jpeg";
 import background2 from "../../images/background2.jpeg";
 import background3 from "../../images/background3.jpeg"
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export const CarouselSec = () => {

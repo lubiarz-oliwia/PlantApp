@@ -1,16 +1,18 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { string, func } from 'prop-types';
 
-export const ButtonComponent = ({children, className}) => (
-    <button className={className}>{children}</button>
+export const ButtonComponent = ({children, className, onClick }) => (
+    <button className={className} onClick={onClick} >{children}</button>
 );
 
 ButtonComponent.propTypes = {
   children: string.isRequired,
-  className: string
+  className: string,
+  onClick: func,
   //variant: oneOf(['primary', 'info', 'dark', 'success']),
 };
 
 ButtonComponent.defaultProps = {
- className: "buyButton"
+ className: "buyButton",
+ onClick: () => {},
 }
