@@ -3,9 +3,7 @@ import { func } from 'prop-types';
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import Form from 'react-bootstrap/Form';
-
 import { ButtonComponent as Button } from '../Button/Button';
-
 
 const validationSchema = yup.object({
   username: yup
@@ -23,9 +21,7 @@ const validationSchema = yup.object({
 
 export const LoginForm = ({ onLoginFormSubmit }) => (
   <>
-
     <div className="form">
-
       <Formik
         initialValues={{
           username: '',

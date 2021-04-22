@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { func } from 'prop-types';
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import RangeSlider from 'react-bootstrap-range-slider';
 import { ButtonComponent as Button } from '../Button/Button';
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
-import RangeSlider from 'react-bootstrap-range-slider';
 
 const validationSchema = yup.object({
   plantName: yup
@@ -23,14 +23,10 @@ const validationSchema = yup.object({
     .required("Wysokość rośliny jest wymagana."),
 });
 
-const style = {color: "pink"};
-
 export const AddForm = ({ handleAddPlant }) => {
 
   return (
-
     <>
-
       <div className="form">
         <Formik
           initialValues={{
@@ -54,45 +50,43 @@ export const AddForm = ({ handleAddPlant }) => {
                   onBlur={handleBlur}
                 />
                 <ErrorMessage name="plantName">
-                { msg => <div style={{ color: 'red' }}>{msg}</div> }
+                  {msg => <div style={{ color: 'red' }}>{msg}</div>}
                 </ErrorMessage>
               </Form.Group>
-              
+
               <Form.Group>
-              <Row>
+                <Row>
                   <Col>
                     <label htmlFor="price">Cena</label>
                   </Col>
-                  </Row>
-                  <Row>
-                <Col xs="8">
-                  {console.log(values)}
-                  <RangeSlider
-                    value={values.price}
-                    name="price"
-                    min={0}
-                    max={200}
-                    step={5}
-                    onChange={e => {
-                      setFieldValue("price", e.target.value);
-                    }}
-                    variant="info"
-                  />
-                </Col>
-                <Col xs="4">
-                  <Form.Control value={values.price + " zł"} />
-                </Col>
+                </Row>
+                <Row>
+                  <Col xs="8">
+                    {console.log(values)}
+                    <RangeSlider
+                      value={values.price}
+                      name="price"
+                      min={0}
+                      max={200}
+                      step={5}
+                      onChange={e => {
+                        setFieldValue("price", e.target.value);
+                      }}
+                      variant="info"
+                    />
+                  </Col>
+                  <Col xs="4">
+                    <Form.Control value={values.price + " zł"} />
+                  </Col>
                 </Row>
                 <Row>
                   <Col>
-                  <ErrorMessage name="price">
-                { msg => <div style={{ color: 'red' }}>{msg}</div> }
-                </ErrorMessage>
+                    <ErrorMessage name="price">
+                      {msg => <div style={{ color: 'red' }}>{msg}</div>}
+                    </ErrorMessage>
                   </Col>
                 </Row>
-
               </Form.Group>
-
               <Form.Group>
                 <Row>
                   <Col>
@@ -119,9 +113,9 @@ export const AddForm = ({ handleAddPlant }) => {
                 </Row>
                 <Row>
                   <Col>
-                  <ErrorMessage name="height">
-                { msg => <div style={{ color: 'red' }}>{msg}</div> }
-                </ErrorMessage>
+                    <ErrorMessage name="height">
+                      {msg => <div style={{ color: 'red' }}>{msg}</div>}
+                    </ErrorMessage>
                   </Col>
                 </Row>
               </Form.Group>
