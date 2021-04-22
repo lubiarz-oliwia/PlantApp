@@ -1,13 +1,14 @@
 .logo {
     display: flex;
+    font-family: $font-logo;
+    font-size: $font-size-logo;
+    text-decoration: none;
+    cursor: pointer;
+    color: $color-dark;
 
     img {
         width: 30px;
         height: 30px;
     }
 
-    p {
-        font-family: $font-logo;
-        font-size: $font-size-logo;
-    }
 }

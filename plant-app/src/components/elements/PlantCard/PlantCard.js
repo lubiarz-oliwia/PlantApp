@@ -1,7 +1,7 @@
 import React from 'react';
 import { ButtonComponent } from '../Button/Button';
 import Card from 'react-bootstrap/Card';
-import '../../scss/main.scss';
+import '../../../scss/main.scss';
 
 export const PlantCard = ({ plantName, price, height }) => {
 

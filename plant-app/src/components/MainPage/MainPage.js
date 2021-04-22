@@ -8,13 +8,13 @@ import {
     faSprayCan
 } from '@fortawesome/free-solid-svg-icons';
 import Container from 'react-bootstrap/Container';
-import { Header } from '../Header/Header';
-import { TileSection } from '../TileSection/TileSection';
-import { Nav } from '../Nav/Nav';
-import { Footer } from '../Footer/Footer';
+import { Header } from '../elements/Header/Header';
+import { TileSection } from '../elements/TileSection/TileSection';
+import { Nav } from '../elements/Nav/Nav';
+import { Footer } from '../elements/Footer/Footer';
 import '../../scss/main.scss';
 
-export const MainPage = ({ handleLoingForm }) => {
+export const MainPage = ({ handleLogIn }) => {
 
     const dataSell = [{
         title: 'Dodawaj bez opłat',
@@ -53,7 +53,7 @@ export const MainPage = ({ handleLoingForm }) => {
     return (
         <>
             <Container>
-                <Nav logIn={handleLoingForm} />
+                <Nav onButtonClick={handleLogIn} buttonText={"Zaloguj"} />
                 <Header />
                 <TileSection
                     data={dataSell}

@@ -1,8 +1,8 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import background4 from "../../images/background4.jpeg";
-import background2 from "../../images/background2.jpeg";
-import background3 from "../../images/background3.jpeg"
+import background4 from "../../../images/background4.jpeg";
+import background2 from "../../../images/background2.jpeg";
+import background3 from "../../../images/background3.jpeg"
 
 export const CarouselSec = () => {
 

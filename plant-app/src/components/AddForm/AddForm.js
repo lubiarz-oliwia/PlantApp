@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import RangeSlider from 'react-bootstrap-range-slider';
-import { ButtonComponent as Button } from '../Button/Button';
+import { ButtonComponent as Button } from '../elements/Button/Button';
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 
 const validationSchema = yup.object({

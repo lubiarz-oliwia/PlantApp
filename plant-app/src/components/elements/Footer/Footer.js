@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookSquare, faTwitterSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons';
 import Row from 'react-bootstrap/Row';
-import '../../scss/main.scss';
+import '../../../scss/main.scss';
 
 export const Footer = () => {
 
