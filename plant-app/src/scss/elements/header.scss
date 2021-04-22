@@ -4,9 +4,10 @@
     // padding: 20px 10px;
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
 
     div {
-        padding-right: 30px;
+        padding-bottom: 20px;
 
         h1 {
             font-size: $font-size-header;
@@ -30,13 +31,11 @@
             margin-bottom: 20px;
         }
 
-        div {
-            padding-bottom: 20px;
-        }
+       
     }
 
     img {
         border: 2px solid $color-border;
-        height: 500px;
+        height: 550px;
     }
 }

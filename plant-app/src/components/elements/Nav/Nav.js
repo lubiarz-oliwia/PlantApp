@@ -2,10 +2,10 @@ import React from 'react';
 import { ButtonComponent } from '../Button/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import greenTea from "../../images/greenTea.png";
-import '../../scss/main.scss';
+import greenTea from "../../../images/greenTea.png";
+import '../../../scss/main.scss';
 
-export const Nav = ({ logIn }) => {
+export const Nav = ({ onButtonClick, buttonText }) => {
 
     return (
         <Row className="justify-content-between" style={{marginTop:"20px"}}>
@@ -22,10 +22,10 @@ export const Nav = ({ logIn }) => {
                 sm={2}
             >
                 <ButtonComponent
-                    children="Zaloguj się!"
+                    children={buttonText}
                     variant="info"
                     //className="submitButton"
-                    onClick={logIn}
+                    onClick={onButtonClick}
                 >
                 </ButtonComponent>
             </Col>

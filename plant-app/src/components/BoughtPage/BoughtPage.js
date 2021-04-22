@@ -2,10 +2,11 @@ import React from 'react';
 import { UserNav } from '../elements/UserNav/UserNav';
 import { UserCard } from '../elements/UserCard/UserCard';
 import { Footer } from '../elements/Footer/Footer';
-import Container from 'react-bootstrap/Container';
-import '../../scss/main.scss';
+import { TableWithPlant } from '../elements/TableWithPlant/TableWithPlant';
 
-export const UserPage = ({ logOut, sellPlant, buyPlant, boughtPlant, goBack }) => {
+import Container from 'react-bootstrap/Container';
+
+export const BoughtPage = ({ logOut, sellPlant, buyPlant, goBack }) => {
 
     return (
         <Container >
@@ -13,11 +14,7 @@ export const UserPage = ({ logOut, sellPlant, buyPlant, boughtPlant, goBack }) =
                 logOut={logOut}
                 goBack={goBack}
             />
-            <UserCard
-                sellPlant={sellPlant}
-                buyPlant={buyPlant}
-                boughtPlant={boughtPlant}
-            />
+            <TableWithPlant />
             <Footer />
         </Container>
 

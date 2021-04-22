@@ -3,14 +3,14 @@ import { ButtonComponent } from '../Button/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
-import background2 from "../../images/background2.jpeg";
-import background3 from "../../images/background3.jpeg";
-import background4 from "../../images/background4.jpeg";
-import cart2 from "../../images/cart2.jpeg";
-import buy1 from "../../images/buy1.jpeg";
-import '../../scss/main.scss';
+import background2 from "../../../images/background2.jpeg";
+import background3 from "../../../images/background3.jpeg";
+import background4 from "../../../images/background4.jpeg";
+import cart2 from "../../../images/cart2.jpeg";
+import buy1 from "../../../images/buy1.jpeg";
+import '../../../scss/main.scss';
 
-export const UserCard = ({ sellPlant, buyPlant }) => {
+export const UserCard = ({ sellPlant, buyPlant, boughtPlant }) => {
 
     return (
         <>
@@ -30,6 +30,7 @@ export const UserCard = ({ sellPlant, buyPlant }) => {
                             <ButtonComponent
                                 children="KUPIONE"
                                 className="buyButton"
+                                onClick={boughtPlant}
                             >
                             </ButtonComponent>
                         </Card.Body>

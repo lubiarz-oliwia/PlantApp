@@ -7,7 +7,6 @@ import {
 import { withRouter } from "react-router";
 import { useHistory } from "react-router-dom";
 import { MainPage } from './components/MainPage/MainPage';
-import { LoginForm } from './components/LoginForm/LoginForm';
 import { UserPage } from './components/UserPage/UserPage';
 import { AddPage } from './components/AddPage/AddPage';
 import Container from 'react-bootstrap/Container';
@@ -16,6 +15,8 @@ import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/main.scss';
 import { ForSellPage } from './components/ForSellPage/ForSellPage';
+import { LoginPage } from './components/LoginPage/LoginPage';
+import { BoughtPage } from './components/BoughtPage/BoughtPage';
 
 function MyApp() {
   let history = useHistory();
@@ -24,12 +25,20 @@ function MyApp() {
     history.push('/login');
   }
 
-  const onLoginFormSubmit = () => {
+  const logOut = () => {
+    history.push('/');
+  }
+
+  const logToUser = () => {
     history.push('/user');
   }
 
-  const logOut = () => {
+  const toMain = () => {
     history.push('/');
+  }
+
+  const toUserPage = () => {
+    history.push('/user');
   }
 
   const sellPlant = () => {
@@ -40,19 +49,24 @@ function MyApp() {
     history.push('/buyplant');
   }
 
+  const boughtPlant = () => {
+    history.push('/boughtplant');
+  }
+
   return (
     <Switch>
       <Route exact path="/">
         <MainPage 
-        handleLoingForm={logIn} 
+        handleLogIn={logIn} 
         />
       </Route>
       <Route exact path="/login">
-        <Container fluid>
+        <Container>
           <Row>
             <Col lg={12}>
-              <LoginForm 
-                onLoginFormSubmit={onLoginFormSubmit} 
+              <LoginPage 
+                onLoginFormSubmit={logToUser} 
+                goBack={toMain}
               />
             </Col>
           </Row>
@@ -61,15 +75,23 @@ function MyApp() {
       <Route exact path="/user">
         <UserPage 
           logOut={logOut} 
+          goBack={toMain}
           sellPlant={sellPlant} 
           buyPlant={buyPlant}
+          boughtPlant={boughtPlant}
         />
       </Route>
       <Route exact path="/addplant">
-        <AddPage />
+        <AddPage 
+        logOut = {logOut}
+        goBack = {toUserPage}
+        />
       </Route>
       <Route exact path="/buyplant">
         <ForSellPage />
+      </Route>
+      <Route exact path="/boughtplant">
+        <BoughtPage />
       </Route>
     </Switch>
   );

@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { Searchbox } from '../Searchbox/Searchbox';
-import { PlantCard } from '../PlantCard/PlantCard';
+import { Searchbox } from '../elements/Searchbox/Searchbox';
+import { PlantCard } from '../elements/PlantCard/PlantCard';
+import { UserNav } from '../elements/UserNav/UserNav';
+
 
 export const ForSellPage = ({ plantName, price, height }) => {
     const plantsForSell = [{
@@ -53,6 +55,7 @@ export const ForSellPage = ({ plantName, price, height }) => {
     return (
         <>
             <Container>
+                <UserNav/>
                 <Searchbox onSearchboxChange={filter} />
                 <Row className="justify-content-md-center">
                     {plantsFiltered.map((item, index) => {
