@@ -1,24 +1,20 @@
-import React from 'react'
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { faFacebookSquare, faTwitterSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons'
-
-import greenTea from "../../images/greenTea.png";
-
+import { faFacebookSquare, faTwitterSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons';
+import Row from 'react-bootstrap/Row';
 import '../../scss/main.scss';
 
-export const Footer = ({ title, description, iconName, colorStyle }) => {
+export const Footer = () => {
 
     return (
         <footer>
-            <div>
-                <p><img src={greenTea} />PlantApp</p>
-            </div>
-            <div>
+            <Row className="justify-content-center">
                 <a href="#"><FontAwesomeIcon icon={faFacebookSquare} /> </a>
                 <a href="#"><FontAwesomeIcon icon={faTwitterSquare} /> </a>
                 <a href="#"><FontAwesomeIcon icon={faInstagramSquare} /></a>
-            </div>
+            </Row>
         </footer>
     )
 };
+
+

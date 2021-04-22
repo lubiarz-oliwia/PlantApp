@@ -1,12 +1,12 @@
 import React from 'react';
-import { 
-    faCreditCard, 
-    faEnvelope, 
-    faPiggyBank, 
-    faSearch, 
-    faShoppingBasket, 
-    faSprayCan 
-    } from '@fortawesome/free-solid-svg-icons';
+import {
+    faCreditCard,
+    faEnvelope,
+    faPiggyBank,
+    faSearch,
+    faShoppingBasket,
+    faSprayCan
+} from '@fortawesome/free-solid-svg-icons';
 import Container from 'react-bootstrap/Container';
 import { Header } from '../Header/Header';
 import { TileSection } from '../TileSection/TileSection';
@@ -14,7 +14,7 @@ import { Nav } from '../Nav/Nav';
 import { Footer } from '../Footer/Footer';
 import '../../scss/main.scss';
 
-export const MainPage = ({handleLoingForm}) => {
+export const MainPage = ({ handleLoingForm }) => {
 
     const dataSell = [{
         title: 'Dodawaj bez opłat',
@@ -52,20 +52,20 @@ export const MainPage = ({handleLoingForm}) => {
 
     return (
         <>
-            <Container fluid className="container">
-                <Nav logIn={handleLoingForm}/>
+            <Container>
+                <Nav logIn={handleLoingForm} />
                 <Header />
-                <TileSection 
-                    data={dataSell} 
-                    header={"Sprzedawaj!"} 
-                    buttonText={"Sprzedaj!"} 
-                    buttonClassName={"sellButton"} 
+                <TileSection
+                    data={dataSell}
+                    header={"Sprzedawaj!"}
+                    buttonText={"Sprzedaj!"}
+                    buttonClassName={"sellButton"}
                 />
-                <TileSection 
-                    data={dataBuy} 
-                    header={"Kupuj!"} 
-                    buttonText={"Kupuj!"} 
-                    buttonClassName={"buyButton"} 
+                <TileSection
+                    data={dataBuy}
+                    header={"Kupuj!"}
+                    buttonText={"Kupuj!"}
+                    buttonClassName={"buyButton"}
                 />
                 <Footer />
             </Container>

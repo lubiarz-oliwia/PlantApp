@@ -1,49 +1,27 @@
 .tileSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 10px;
-    margin: 40px auto;
-
+    padding-top: 50px;
 
     h1 {
-        justify-content: center;
-        text-align: center;
         font-size: $font-size-header;
         color: $color-border;
         margin-bottom: 40px;
-        
     }
 
-    div {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    .tile {
+        text-align: center;
 
-        .tile {
-            flex-direction: column;
-            text-align: center;
-            padding: 15px 100px;
-            margin-bottom: 20px;
+        .iconTile {
+            font-size: 25px;
+        }
 
+        h1 {
+            color: $color-buy;
+            font-size: $font-size-logo;
+        }
 
-            .iconTile {
-                margin-bottom: 20px;
-                font-size: 25px;
-            }
-
-            h1 {
-                color: $color-buy;
-                font-size: $font-size-logo;
-            }
-
-            p {
-                color: $color-text;
-                font-size: $font-size-text;
-                margin-bottom: 20px;
-            }
+        p {
+            color: $color-text;
+            font-size: $font-size-text;
         }
     }
-
 }
