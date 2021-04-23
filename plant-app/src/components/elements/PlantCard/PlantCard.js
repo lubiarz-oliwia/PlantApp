@@ -3,11 +3,11 @@ import { ButtonComponent } from '../Button/Button';
 import Card from 'react-bootstrap/Card';
 import '../../../scss/main.scss';
 
-export const PlantCard = ({ plantName, price, height }) => {
+export const PlantCard = ({ plantName, price, showMoreButton }) => {
 
     return (
         <>
-            <Card>
+            <Card style={{marginBottom: "10px"}}>
                 <Card.Body>
                     <Card.Title>
                         {plantName}
@@ -15,12 +15,10 @@ export const PlantCard = ({ plantName, price, height }) => {
                     <Card.Text>
                         Cena: {price}
                     </Card.Text>
-                    <Card.Text>
-                        Wielkość: {height}
-                    </Card.Text>
                     <ButtonComponent
                         children="Więcej..."
                         className="sellButton"
+                        onClick={showMoreButton}
                     >
                     </ButtonComponent>
                 </Card.Body>
