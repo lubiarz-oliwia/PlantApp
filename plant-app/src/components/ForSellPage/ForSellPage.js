@@ -45,7 +45,7 @@ import { getForSellPlants } from "../API/constants";
 
 // ]
 
-export const ForSellPage = () => {
+export const ForSellPage = ({ toDetails, logOut, goBack }) => {
     const [plantsForSell, setPlantsForSell] = useState([]);
     const [plantsFiltered, setPlantsFiltered] = useState([]);
 
@@ -69,7 +69,10 @@ export const ForSellPage = () => {
     return (
         <>
             <Container>
-                <UserNav/>
+            <UserNav
+                logOut={logOut}
+                goBack={goBack}
+            />
                 <Searchbox onSearchboxChange={filter} />
                 <Row className="justify-content-md-center">
                     {plantsFiltered.map((item, index) => {
@@ -78,7 +81,7 @@ export const ForSellPage = () => {
                                 <PlantCard
                                     plantName={item.plantName}
                                     price={item.price}
-                                    //showMoreButton={}
+                                    onButtonMore={() => toDetails(item.id)}
                                 />
                             </Col>
                         )
