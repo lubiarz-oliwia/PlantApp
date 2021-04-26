@@ -17,9 +17,9 @@ export const UserNav = ({ logOut, goBack }) => {
                 <a className="logo" href="/"><img src={greenTea}/>PlantApp</a>
             </Col>
             <Col
-                lg={2}
-                md={2}
-                sm={2}
+                 lg={{ span: 1, offset: 1 }}
+                 md={{ span: 1, offset: 1 }}
+                 sm={{ span: 1, offset: 1 }}
             >
                <ButtonComponent
                     children="Wróć"
@@ -29,9 +29,9 @@ export const UserNav = ({ logOut, goBack }) => {
                 </ButtonComponent>
             </Col>
             <Col
-                lg={2}
-                md={2}
-                sm={2}
+                lg={{ span: 1, offset: 1 }}
+                md={{ span: 1, offset: 1 }}
+                sm={{ span: 1, offset: 1 }}
             >
                <ButtonComponent
                     children="Wyloguj"

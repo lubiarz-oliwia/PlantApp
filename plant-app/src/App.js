@@ -17,6 +17,7 @@ import './scss/main.scss';
 import { ForSellPage } from './components/ForSellPage/ForSellPage';
 import { LoginPage } from './components/LoginPage/LoginPage';
 import { BoughtPage } from './components/BoughtPage/BoughtPage';
+import { PlantPage } from './components/PlantPage/PlantPage';
 
 function MyApp() {
   let history = useHistory();
@@ -29,15 +30,11 @@ function MyApp() {
     history.push('/');
   }
 
+  const goBack = () => {
+    history.goBack();
+  }
+
   const logToUser = () => {
-    history.push('/user');
-  }
-
-  const toMain = () => {
-    history.push('/');
-  }
-
-  const toUserPage = () => {
     history.push('/user');
   }
 
@@ -53,45 +50,62 @@ function MyApp() {
     history.push('/boughtplant');
   }
 
+  const toDetails = (id) => {
+    const input = {
+      pathname: '/details',
+      state: { id: id }
+    };
+    history.push(input);
+  }
+
   return (
     <Switch>
       <Route exact path="/">
-        <MainPage 
-        handleLogIn={logIn} 
+        <MainPage
+          handleLogIn={logIn}
         />
       </Route>
       <Route exact path="/login">
-        <Container>
-          <Row>
-            <Col lg={12}>
-              <LoginPage 
-                onLoginFormSubmit={logToUser} 
-                goBack={toMain}
-              />
-            </Col>
-          </Row>
-        </Container>
+        <LoginPage
+          onLoginFormSubmit={logToUser}
+          goBack={goBack}
+        />
       </Route>
       <Route exact path="/user">
-        <UserPage 
-          logOut={logOut} 
-          goBack={toMain}
-          sellPlant={sellPlant} 
+        <UserPage
+          logOut={logOut}
+          goBack={goBack}
+          sellPlant={sellPlant}
           buyPlant={buyPlant}
           boughtPlant={boughtPlant}
         />
       </Route>
       <Route exact path="/addplant">
-        <AddPage 
-        logOut = {logOut}
-        goBack = {toUserPage}
+        <AddPage
+          logOut={logOut}
+          goBack={goBack}
         />
       </Route>
       <Route exact path="/buyplant">
-        <ForSellPage />
+        <ForSellPage 
+        logOut={logOut}
+        goBack={goBack}
+        toDetails={toDetails}/>
+      </Route>
+      <Route exact path="/details">
+        {({location}) => (
+          <PlantPage id={location.state.id}
+          logOut={logOut}
+          goBack={goBack}
+          buy={boughtPlant}
+         />
+        )}
       </Route>
       <Route exact path="/boughtplant">
-        <BoughtPage />
+        <BoughtPage 
+        logOut={logOut}
+        goBack={goBack}
+        />
       </Route>
     </Switch>
   );

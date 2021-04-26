@@ -8,7 +8,7 @@ import { UserNav } from '../elements/UserNav/UserNav';
 import { getForSellPlants } from "../API/constants";
 
 
-export const BuyPlant = () => {
+export const BuyPlant = ({toDetails}) => {
    
     return (
         <>
@@ -23,7 +23,7 @@ export const BuyPlant = () => {
                                     plantName={item.plantName}
                                     price={item.price}
                                     height={item.height}
-                                    //showMoreButton={}
+                                    showMoreButton={toDetails}
                                 />
                             </Col>
                         )

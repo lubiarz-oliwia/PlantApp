@@ -3,7 +3,7 @@ import { ButtonComponent } from '../Button/Button';
 import Card from 'react-bootstrap/Card';
 import '../../../scss/main.scss';
 
-export const PlantCard = ({ plantName, price, showMoreButton }) => {
+export const PlantCard = ({ plantName, price, onButtonMore }) => {
 
     return (
         <>
@@ -18,7 +18,7 @@ export const PlantCard = ({ plantName, price, showMoreButton }) => {
                     <ButtonComponent
                         children="Więcej..."
                         className="sellButton"
-                        onClick={showMoreButton}
+                        onClick={onButtonMore}
                     >
                     </ButtonComponent>
                 </Card.Body>
