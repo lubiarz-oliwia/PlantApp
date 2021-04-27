@@ -13,7 +13,7 @@ export const PlantCard = ({ plantName, price, onButtonMore }) => {
                         {plantName}
                     </Card.Title>
                     <Card.Text>
-                        Cena: {price}
+                        Cena: {price} zł
                     </Card.Text>
                     <ButtonComponent
                         children="Więcej..."

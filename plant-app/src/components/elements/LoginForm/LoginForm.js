@@ -8,15 +8,10 @@ import { ButtonComponent as Button } from '../Button/Button';
 const validationSchema = yup.object({
   username: yup
     .string('Wpisz login.')
-    .required('Login jest wymagany.')
-    .min(5, "Login powinien mieć więcej ni 5 znaków."),
+    .required('Login jest wymagany.'),
   password: yup
-    .string('Wpis hasło.')
-    .required('Hasło jest wymagane.')
-    .matches(
-      /^((?=.*[a-z]){1})((?=.*[A-Z]){1})(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/,
-      "Hasło powinno zawierać conajmniej 8 znaków, conajmniej jedną cyfrę, wielką, małą literę."
-    ),
+    .string('Wpisz hasło.')
+    .required('Hasło jest wymagane.'),
 });
 
 export const LoginForm = ({ onLoginFormSubmit }) => (

@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import RangeSlider from 'react-bootstrap-range-slider';
-import { ButtonComponent as Button } from '../elements/Button/Button';
+import { ButtonComponent as Button } from '../Button/Button';
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 
 const validationSchema = yup.object({
@@ -32,8 +32,7 @@ export const AddForm = ({ handleAddPlant }) => {
           initialValues={{
             plantName: '',
             price: 0,
-            height: 0,
-            age: ""
+            height: 0
           }}
           validationSchema={validationSchema}
           onSubmit={handleAddPlant}
@@ -45,7 +44,7 @@ export const AddForm = ({ handleAddPlant }) => {
                 <Form.Control
                   id="plantName"
                   name="plantName"
-                  values={values.plantName}
+                  value={values.plantName}
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
@@ -53,7 +52,6 @@ export const AddForm = ({ handleAddPlant }) => {
                   {msg => <div style={{ color: 'red' }}>{msg}</div>}
                 </ErrorMessage>
               </Form.Group>
-
               <Form.Group>
                 <Row>
                   <Col>
@@ -97,7 +95,7 @@ export const AddForm = ({ handleAddPlant }) => {
                   <Col xs="8">
                     <RangeSlider
                       value={values.height}
-                      name="price"
+                      name="height"
                       min={0}
                       max={200}
                       step={2}
@@ -121,14 +119,14 @@ export const AddForm = ({ handleAddPlant }) => {
               </Form.Group>
 
 
-              <Form.Group controlId="exampleForm.ControlTextarea1">
+              {/* <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Dodaj komentarz</Form.Label>
                 <Form.Control as="textarea" rows={3} placeholder="Opcjonalnie" />
-              </Form.Group>
+              </Form.Group> */}
 
-              <Form.Group>
+              {/* <Form.Group>
                 <Form.File id="addPhoto" label="Dodaj zdjęcie" />
-              </Form.Group>
+              </Form.Group> */}
 
               <div className="forButton">
                 <Button

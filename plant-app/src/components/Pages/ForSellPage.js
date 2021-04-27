@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import { Searchbox } from '../elements/Searchbox/Searchbox';
 import { PlantCard } from '../elements/PlantCard/PlantCard';
 import { UserNav } from '../elements/UserNav/UserNav';
-import { getForSellPlants } from "../API/constants";
+import { getForSellPlants } from "../API/forSell";
 
 // const plantsForSell = [{
 //     plantName: "fiolek",
@@ -60,19 +60,25 @@ export const ForSellPage = ({ toDetails, logOut, goBack }) => {
     }, []);
 
     const filter = (text) => {
-        const myPlantsFiltered = plantsForSell.filter((el) => el.plantName.includes(text) || el.price.includes(text));
+        let myPlantsFiltered = plantsForSell;
+        console.log(text);
+        if (text) {
+            myPlantsFiltered = plantsForSell.filter((el) => {
+                if (el.plantName && el.price)
+                    return el.plantName.includes(text) || el.price.includes(text);
+                return false;
+            });
+        }
         setPlantsFiltered(myPlantsFiltered);
     }
-
-    console.log(plantsFiltered);
 
     return (
         <>
             <Container>
-            <UserNav
-                logOut={logOut}
-                goBack={goBack}
-            />
+                <UserNav
+                    logOut={logOut}
+                    goBack={goBack}
+                />
                 <Searchbox onSearchboxChange={filter} />
                 <Row className="justify-content-md-center">
                     {plantsFiltered.map((item, index) => {

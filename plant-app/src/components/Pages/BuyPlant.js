@@ -5,8 +5,6 @@ import Row from 'react-bootstrap/Row';
 import { Searchbox } from '../elements/Searchbox/Searchbox';
 import { PlantCard } from '../elements/PlantCard/PlantCard';
 import { UserNav } from '../elements/UserNav/UserNav';
-import { getForSellPlants } from "../API/constants";
-
 
 export const BuyPlant = ({toDetails}) => {
    

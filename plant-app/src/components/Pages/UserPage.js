@@ -5,7 +5,7 @@ import { Footer } from '../elements/Footer/Footer';
 import Container from 'react-bootstrap/Container';
 import '../../scss/main.scss';
 
-export const UserPage = ({ logOut, sellPlant, buyPlant, boughtPlant, goBack }) => {
+export const UserPage = ({ logOut, sellPlant, buyPlant, boughtPlant, goBack, yourData }) => {
 
     return (
         <Container >
@@ -17,9 +17,9 @@ export const UserPage = ({ logOut, sellPlant, buyPlant, boughtPlant, goBack }) =
                 sellPlant={sellPlant}
                 buyPlant={buyPlant}
                 boughtPlant={boughtPlant}
+                yourData={yourData}
             />
             <Footer />
         </Container>
-
     )
 };

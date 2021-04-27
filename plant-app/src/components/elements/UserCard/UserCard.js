@@ -10,7 +10,7 @@ import cart2 from "../../../images/cart2.jpeg";
 import buy1 from "../../../images/buy1.jpeg";
 import '../../../scss/main.scss';
 
-export const UserCard = ({ sellPlant, buyPlant, boughtPlant }) => {
+export const UserCard = ({ sellPlant, buyPlant, boughtPlant, yourData }) => {
 
     return (
         <>
@@ -71,6 +71,7 @@ export const UserCard = ({ sellPlant, buyPlant, boughtPlant }) => {
                             <ButtonComponent
                                 children="TWOJE DANE"
                                 className="submitButton"
+                                onClick={yourData}
                             >
                             </ButtonComponent>
                         </Card.Body>

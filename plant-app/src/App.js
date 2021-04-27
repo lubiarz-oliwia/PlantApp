@@ -6,18 +6,16 @@ import {
 } from "react-router-dom";
 import { withRouter } from "react-router";
 import { useHistory } from "react-router-dom";
-import { MainPage } from './components/MainPage/MainPage';
-import { UserPage } from './components/UserPage/UserPage';
-import { AddPage } from './components/AddPage/AddPage';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import { MainPage } from './components/Pages/MainPage';
+import { UserPage } from './components/Pages/UserPage';
+import { AddPage } from './components/Pages/AddPage';
+import { ForSellPage } from './components/Pages/ForSellPage';
+import { LoginPage } from './components/Pages/LoginPage';
+import { BoughtPage } from './components/Pages/BoughtPage';
+import { PlantPage } from './components/Pages/PlantPage';
+import {YourDetails} from "./components/elements/YourDetails"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/main.scss';
-import { ForSellPage } from './components/ForSellPage/ForSellPage';
-import { LoginPage } from './components/LoginPage/LoginPage';
-import { BoughtPage } from './components/BoughtPage/BoughtPage';
-import { PlantPage } from './components/PlantPage/PlantPage';
 
 function MyApp() {
   let history = useHistory();
@@ -34,7 +32,8 @@ function MyApp() {
     history.goBack();
   }
 
-  const logToUser = () => {
+  const onLoginFormSubmit = (userData) => {
+    localStorage.setItem('user', JSON.stringify(userData));
     history.push('/user');
   }
 
@@ -50,6 +49,10 @@ function MyApp() {
     history.push('/boughtplant');
   }
 
+  const yourData = () => {
+    history.push('/yourdata');
+  }
+
   const toDetails = (id) => {
     const input = {
       pathname: '/details',
@@ -57,6 +60,8 @@ function MyApp() {
     };
     history.push(input);
   }
+
+
 
   return (
     <Switch>
@@ -67,7 +72,7 @@ function MyApp() {
       </Route>
       <Route exact path="/login">
         <LoginPage
-          onLoginFormSubmit={logToUser}
+          onLoginFormSubmit={onLoginFormSubmit}
           goBack={goBack}
         />
       </Route>
@@ -78,34 +83,39 @@ function MyApp() {
           sellPlant={sellPlant}
           buyPlant={buyPlant}
           boughtPlant={boughtPlant}
+          yourData={yourData}
         />
       </Route>
       <Route exact path="/addplant">
         <AddPage
           logOut={logOut}
           goBack={goBack}
+          sellPlant={sellPlant}
         />
       </Route>
       <Route exact path="/buyplant">
-        <ForSellPage 
-        logOut={logOut}
-        goBack={goBack}
-        toDetails={toDetails}/>
-      </Route>
-      <Route exact path="/details">
-        {({location}) => (
-          <PlantPage id={location.state.id}
+        <ForSellPage
           logOut={logOut}
           goBack={goBack}
-          buy={boughtPlant}
-         />
+          toDetails={toDetails} />
+      </Route>
+      <Route exact path="/details">
+        {({ location }) => (
+          <PlantPage id={location.state.id}
+            logOut={logOut}
+            goBack={goBack}
+            buy={boughtPlant}
+          />
         )}
       </Route>
       <Route exact path="/boughtplant">
-        <BoughtPage 
-        logOut={logOut}
-        goBack={goBack}
+        <BoughtPage
+          logOut={logOut}
+          goBack={goBack}
         />
+      </Route>
+      <Route exact path="/yourData">
+        <YourDetails/>
       </Route>
     </Switch>
   );
