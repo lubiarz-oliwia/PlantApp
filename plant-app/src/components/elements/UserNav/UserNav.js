@@ -7,6 +7,14 @@ import greenTea from "../../../images/greenTea.png";
 
 export const UserNav = ({ logOut, goBack }) => {
 
+    const getUserName = () => {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+            return user.username;
+        }
+        return '';
+    }
+    
     return (
         <Row className="justify-content-between" style={{marginTop:"20px", marginBottom:"20px"}}>
             <Col
@@ -39,6 +47,9 @@ export const UserNav = ({ logOut, goBack }) => {
                     onClick={logOut}
                 >
                 </ButtonComponent>
+            </Col>
+            <Col>
+               <p>Witaj {getUserName()}</p>
             </Col>
         </Row>
     )

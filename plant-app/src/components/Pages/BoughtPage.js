@@ -1,12 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { UserNav } from '../elements/UserNav/UserNav';
-import { UserCard } from '../elements/UserCard/UserCard';
 import { Footer } from '../elements/Footer/Footer';
 import { TableWithPlant } from '../elements/TableWithPlant/TableWithPlant';
-import { getBoughtPlants } from "../API/constants";
-
+import { getBoughtPlants } from "../API/bought";
 import Container from 'react-bootstrap/Container';
-
 
 export const BoughtPage = ({ logOut, goBack }) => {
     const [boughtPlants, setBoughtPlants] = useState([]);
@@ -17,14 +14,13 @@ export const BoughtPage = ({ logOut, goBack }) => {
 
     return (
         <Container >
-           <UserNav
+            <UserNav
                 logOut={logOut}
                 goBack={goBack}
             />
-             <TableWithPlant
-                                    boughtPlants={boughtPlants}
-                                />
-                    
+            <TableWithPlant
+                boughtPlants={boughtPlants}
+            />
             <Footer />
         </Container>
 
