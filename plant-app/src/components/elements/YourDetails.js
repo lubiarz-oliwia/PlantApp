@@ -24,7 +24,7 @@ const validationSchema = yup.object({
       .required('Kod pocztowy jest wymagany.'),
   });
 
-export const YourDetails = ({save}) => {
+export const YourDetails = () => {
     const [userData, setUserData] = useState({ name: '', surname: '', street: '', postalCode: '' });
     const [showEditForm, setShowEditForm] = useState(true);
 
@@ -35,21 +35,21 @@ export const YourDetails = ({save}) => {
         }
         return '';
     }
+
     useEffect(() => {
         getUserData(setUserData);
     }, []);
-    
 
-    const handleChangeData = (values) => {
-        editUserData(values).then(() => {
-            getUserData(setUserData);
-        });
-        setShowEditForm(!showEditForm);
+    
+    const {name, surname, street, postalCode, id} = userData;
+
+    const handleChangeData = (data) => {
+    editUserData(id, data);
+    setShowEditForm(!showEditForm);
+    getUserData(setUserData);
     };
 
 
-    const {name, surname, street, postalCode} = userData;
-    
     return (
         <>
         {showEditForm ? (

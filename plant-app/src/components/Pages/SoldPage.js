@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { UserNav } from '../elements/UserNav/UserNav';
 import { Footer } from '../elements/Footer/Footer';
 import { TableWithPlant } from '../elements/TableWithPlant/TableWithPlant';
-import { getBoughtPlants } from "../API/bought";
+import { getSoldPlants } from "../API/sold";
 import Container from 'react-bootstrap/Container';
 
-export const BoughtPage = ({ logOut, goBack }) => {
-    const [boughtPlants, setBoughtPlants] = useState([]);
+export const SoldPage = ({ logOut, goBack, title }) => {
+    const [soldPlants, setSoldPlants] = useState([]);
 
     useEffect(() => {
-        getBoughtPlants(setBoughtPlants);
+        getSoldPlants(setSoldPlants);
     }, []);
 
     return (
@@ -19,8 +19,8 @@ export const BoughtPage = ({ logOut, goBack }) => {
                 goBack={goBack}
             />
             <TableWithPlant
-                plants={boughtPlants}
-                title={"Sprzedawca"}
+                plants={soldPlants}
+                title={"Kupione przez"}
             />
             <Footer />
         </Container>
