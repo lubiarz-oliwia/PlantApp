@@ -13,6 +13,8 @@ import { ForSellPage } from './components/Pages/ForSellPage';
 import { LoginPage } from './components/Pages/LoginPage';
 import { BoughtPage } from './components/Pages/BoughtPage';
 import { PlantPage } from './components/Pages/PlantPage';
+import { SoldPage } from './components/Pages/SoldPage';
+
 import {YourDetails} from "./components/elements/YourDetails"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/main.scss';
@@ -53,6 +55,10 @@ function MyApp() {
     history.push('/yourdata');
   }
 
+  const soldPlants = () => {
+    history.push('/soldplants');
+  }
+
   const toDetails = (id) => {
     const input = {
       pathname: '/details',
@@ -83,6 +89,7 @@ function MyApp() {
           sellPlant={sellPlant}
           buyPlant={buyPlant}
           boughtPlant={boughtPlant}
+          soldPlants={soldPlants}
           yourData={yourData}
         />
       </Route>
@@ -90,7 +97,7 @@ function MyApp() {
         <AddPage
           logOut={logOut}
           goBack={goBack}
-          sellPlant={sellPlant}
+          sellPlant={buyPlant}
         />
       </Route>
       <Route exact path="/buyplant">
@@ -116,6 +123,12 @@ function MyApp() {
       </Route>
       <Route exact path="/yourData">
         <YourDetails/>
+      </Route>
+      <Route exact path="/soldplants">
+        <SoldPage
+          logOut={logOut}
+          goBack={goBack}
+        />
       </Route>
     </Switch>
   );
