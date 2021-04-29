@@ -6,8 +6,6 @@
     font-size: 13px;
     background-color: $color-buy;
     color: $color-white;
-    //width: 120px;
-
 }
 
 .sellButton {
@@ -19,8 +17,6 @@
     background-color: $color-white;
     color: $color-dark;
     text-align: center;
-    //width: 120px;
-
 }
 
 .submitButton{
@@ -32,10 +28,9 @@
     background-color: $color-border;
     color: $color-dark;
     text-align: center;
-    //width: 120px;
 }
 
-.logoutButton{
+.logoutButton {
     border-radius: 10px;
     border: 1px solid $color-dark;
     text-decoration: none;
@@ -44,7 +39,6 @@
     background-color: $color-dark;
     color: $color-white;
     text-align: center;
-    //width: 120px;
 }
 
 .card {
@@ -57,3 +51,15 @@
     }
 }
 
+//for details card
+
+.center {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.cardStyle {
+    margin: 30px 0;
+    padding: 20px;
+}
