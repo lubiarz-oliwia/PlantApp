@@ -1,13 +1,12 @@
-.header {
+header {
     display: flex;
-    // font-size: 12px;
-    // padding: 20px 10px;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 40px;
 
     div {
         padding-bottom: 20px;
+        align-items: center;
 
         h1 {
             font-size: $font-size-header;
@@ -31,11 +30,11 @@
             margin-bottom: 20px;
         }
 
-       
+
     }
 
     img {
         border: 2px solid $color-border;
-        height: 550px;
+        height: 400px;
     }
 }

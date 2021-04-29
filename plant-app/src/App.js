@@ -4,18 +4,16 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import { withRouter } from "react-router";
+import { MainPage } from './containers/MainPage';
+import { UserPage } from './containers/UserPage';
+import { AddPage } from './containers/AddPage';
+import { ForSellPage } from './containers/ForSellPage';
+import { LoginPage } from './containers/LoginPage';
+import { BoughtPage } from './containers/BoughtPage';
+import { PlantPage } from './containers/PlantPage';
+import { SoldPage } from './containers/SoldPage';
+import { UserInfoPage } from "./containers/UserInfoPage";
 import { useHistory } from "react-router-dom";
-import { MainPage } from './components/Pages/MainPage';
-import { UserPage } from './components/Pages/UserPage';
-import { AddPage } from './components/Pages/AddPage';
-import { ForSellPage } from './components/Pages/ForSellPage';
-import { LoginPage } from './components/Pages/LoginPage';
-import { BoughtPage } from './components/Pages/BoughtPage';
-import { PlantPage } from './components/Pages/PlantPage';
-import { SoldPage } from './components/Pages/SoldPage';
-
-import {YourDetails} from "./components/elements/YourDetails"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/main.scss';
 
@@ -24,10 +22,6 @@ function MyApp() {
 
   const logIn = () => {
     history.push('/login');
-  }
-
-  const logOut = () => {
-    history.push('/');
   }
 
   const goBack = () => {
@@ -39,23 +33,23 @@ function MyApp() {
     history.push('/user');
   }
 
-  const sellPlant = () => {
+  const redirectToSellPlant = () => {
     history.push('/addplant');
   }
 
-  const buyPlant = () => {
+  const redirectToBuyPlant = () => {
     history.push('/buyplant');
   }
 
-  const boughtPlant = () => {
+  const redirectToBoughtPlant = () => {
     history.push('/boughtplant');
   }
 
-  const yourData = () => {
+  const redirectToUserData = () => {
     history.push('/yourdata');
   }
 
-  const soldPlants = () => {
+  const redirectToSoldPlants = () => {
     history.push('/soldplants');
   }
 
@@ -66,8 +60,6 @@ function MyApp() {
     };
     history.push(input);
   }
-
-
 
   return (
     <Switch>
@@ -84,61 +76,45 @@ function MyApp() {
       </Route>
       <Route exact path="/user">
         <UserPage
-          logOut={logOut}
-          goBack={goBack}
-          sellPlant={sellPlant}
-          buyPlant={buyPlant}
-          boughtPlant={boughtPlant}
-          soldPlants={soldPlants}
-          yourData={yourData}
+          redirectToSellPlant={redirectToSellPlant}
+          redirectToBuyPlant={redirectToBuyPlant}
+          redirectToBoughtPlant={redirectToBoughtPlant}
+          redirectToSoldPlants={redirectToSoldPlants}
+          redirectToUserData={redirectToUserData}
         />
       </Route>
       <Route exact path="/addplant">
         <AddPage
-          logOut={logOut}
-          goBack={goBack}
-          sellPlant={buyPlant}
+          sellPlant={redirectToBuyPlant}
         />
       </Route>
       <Route exact path="/buyplant">
         <ForSellPage
-          logOut={logOut}
-          goBack={goBack}
           toDetails={toDetails} />
       </Route>
       <Route exact path="/details">
         {({ location }) => (
           <PlantPage id={location.state.id}
-            logOut={logOut}
-            goBack={goBack}
-            buy={boughtPlant}
+            buy={redirectToBoughtPlant}
           />
         )}
       </Route>
       <Route exact path="/boughtplant">
-        <BoughtPage
-          logOut={logOut}
-          goBack={goBack}
-        />
+        <BoughtPage />
       </Route>
       <Route exact path="/yourData">
-        <YourDetails/>
+        <UserInfoPage />
       </Route>
       <Route exact path="/soldplants">
-        <SoldPage
-          logOut={logOut}
-          goBack={goBack}
-        />
+        <SoldPage />
       </Route>
     </Switch>
   );
 }
 
-const MyAppWrapped = withRouter(MyApp);
-
 const App = () => (
   <Router>
-    <MyAppWrapped />
+    <MyApp />
   </Router>
 )
 
