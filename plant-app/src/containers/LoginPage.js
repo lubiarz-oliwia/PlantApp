@@ -3,13 +3,13 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { LoginForm } from '../components/LoginForm';
-import { Nav } from '../components/Nav';
+import { Navigation } from '../components/Nav';
 import { Footer } from '../components/Footer';
 import '../scss/main.scss';
 
 export const LoginPage = ({ goBack, onLoginFormSubmit }) => (
   <Container className="container-fluid">
-    <Nav
+    <Navigation
       onButtonClick={goBack}
       buttonText={"Wróć"}
     />

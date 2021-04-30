@@ -7,7 +7,7 @@ import '../scss/main.scss';
 export const Header = () => (
     <header>
         <Row>
-            <Col lg={5}>
+            <Col lg={6}>
                 <div>
                     <h1>Twoja platforma do
                         <span> kupowania </span>
@@ -22,8 +22,10 @@ export const Header = () => (
                     </h2>
                 </div>
             </Col>
-            <Col lg={7}>
-                <img src={header} />
+            <Col lg={6}>
+                <div className="imgbox">
+                    <img src={header} />
+                </div>
             </Col>
         </Row>
     </header>

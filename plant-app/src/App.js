@@ -85,7 +85,7 @@ function MyApp() {
       </Route>
       <Route exact path="/addplant">
         <AddPage
-          sellPlant={redirectToBuyPlant}
+          redirectToAllPlants={redirectToBuyPlant}
         />
       </Route>
       <Route exact path="/buyplant">
@@ -95,7 +95,7 @@ function MyApp() {
       <Route exact path="/details">
         {({ location }) => (
           <PlantPage id={location.state.id}
-            buy={redirectToBoughtPlant}
+          redirectToBoughtPlant={redirectToBoughtPlant}
           />
         )}
       </Route>

@@ -1,21 +1,21 @@
 import React from 'react';
+import Navbar from 'react-bootstrap/Navbar';
 import { ButtonComponent } from './Button';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import greenTea from "../images/greenTea.png";
 import '../scss/main.scss';
 
-export const Nav = ({ onButtonClick, buttonText }) => (
-    <Row className="justify-content-sm-between" style={{ justifyContent: "between", marginTop: "20px" }}>
-        <Col xs={2}>
-            <div className="logo"><img src={greenTea} /><p>PlantApp</p></div>
-        </Col>
-        <Col xs={2}>
-            <ButtonComponent
-                children={buttonText}
-                onClick={onButtonClick}
-            >
-            </ButtonComponent>
-        </Col>
-    </Row>
+export const Navigation = ({ onButtonClick, buttonText }) => (
+    <Navbar className="justify-content-between" expand="lg" style={{ marginBottom: "20px", marginTop: "20px" }} >
+        <Navbar.Brand href="/">
+            <div className="logo" href="/"><img src={greenTea} />
+         PlantApp
+         </div>
+        </Navbar.Brand>
+        <ButtonComponent
+            children={buttonText}
+            onClick={onButtonClick}
+        >
+        </ButtonComponent>
+    </Navbar>
 )
+

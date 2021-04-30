@@ -7,13 +7,14 @@ import { AddForm } from "../components/AddForm";
 import { getUserName } from '../utils';
 import '../scss/main.scss';
 
-export const AddPage = ({ sellPlant }) => {
+export const AddPage = ({ redirectToAllPlants }) => {
     const userId = { userId: getUserName() };
 
     const addPlant = (values) => {
         const data = { ...values, ...userId };
-        addPlantForSell(data);
-        sellPlant();
+        addPlantForSell(data).then(() => {
+            redirectToAllPlants();
+        });
     };
 
     return (
