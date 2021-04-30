@@ -43,9 +43,8 @@ export const YourDetails = () => {
   const { name, surname, street, postalCode, id } = userData;
 
   const handleChangeData = (data) => {
-    editUserData(id, data);
+    editUserData(id, data, setUserData);
     setShowEditForm(!showEditForm);
-    getUserData(setUserData);
   };
 
   return (

@@ -8,7 +8,7 @@ import { ButtonComponent } from '../components/Button';
 import { getUserName } from "../utils";
 import '../scss/main.scss';
 
-export const PlantPage = ({ id, buy }) => {
+export const PlantPage = ({ id, redirectToBoughtPlant }) => {
     const [details, setDetails] = useState({ plantName: '', price: '', height: '', userId: '' });
 
     useEffect(() => {
@@ -17,8 +17,9 @@ export const PlantPage = ({ id, buy }) => {
 
     const buyPlant = () => {
         deleteBoughtPlant(id);
-        addBoughtPlants(details);
-        buy();
+        addBoughtPlants(details).then(() => {
+            redirectToBoughtPlant()
+        });
     }
 
     const belongsToLoggedUser = () => {

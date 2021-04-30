@@ -10,13 +10,15 @@ export const getUserData = (successCallback) => {
     .catch(err => console.log(err));
 };
 
-export const editUserData = (id, data) => {
+export const editUserData = (id, data, setUserData) => {
   return fetch(`${API_URL}/userdata/${id}`, {
     headers: {
       'Content-Type': 'application/json'
     },
     method: 'PUT',
     body: JSON.stringify(data),
+  }).then(() => {
+    getUserData(setUserData);
   })
     .catch(err => console.log(err));
 };
